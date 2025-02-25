@@ -20,7 +20,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Msg_UpdateParams_FullMethodName = "/addressbook.addressbook.Msg/UpdateParams"
+	Msg_UpdateParams_FullMethodName  = "/addressbook.addressbook.Msg/UpdateParams"
+	Msg_CreateContact_FullMethodName = "/addressbook.addressbook.Msg/CreateContact"
+	Msg_UpdateContact_FullMethodName = "/addressbook.addressbook.Msg/UpdateContact"
+	Msg_DeleteContact_FullMethodName = "/addressbook.addressbook.Msg/DeleteContact"
 )
 
 // MsgClient is the client API for Msg service.
@@ -30,6 +33,9 @@ type MsgClient interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
+	CreateContact(ctx context.Context, in *MsgCreateContact, opts ...grpc.CallOption) (*MsgCreateContactResponse, error)
+	UpdateContact(ctx context.Context, in *MsgUpdateContact, opts ...grpc.CallOption) (*MsgUpdateContactResponse, error)
+	DeleteContact(ctx context.Context, in *MsgDeleteContact, opts ...grpc.CallOption) (*MsgDeleteContactResponse, error)
 }
 
 type msgClient struct {
@@ -49,6 +55,33 @@ func (c *msgClient) UpdateParams(ctx context.Context, in *MsgUpdateParams, opts 
 	return out, nil
 }
 
+func (c *msgClient) CreateContact(ctx context.Context, in *MsgCreateContact, opts ...grpc.CallOption) (*MsgCreateContactResponse, error) {
+	out := new(MsgCreateContactResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) UpdateContact(ctx context.Context, in *MsgUpdateContact, opts ...grpc.CallOption) (*MsgUpdateContactResponse, error) {
+	out := new(MsgUpdateContactResponse)
+	err := c.cc.Invoke(ctx, Msg_UpdateContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *msgClient) DeleteContact(ctx context.Context, in *MsgDeleteContact, opts ...grpc.CallOption) (*MsgDeleteContactResponse, error) {
+	out := new(MsgDeleteContactResponse)
+	err := c.cc.Invoke(ctx, Msg_DeleteContact_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 // All implementations must embed UnimplementedMsgServer
 // for forward compatibility
@@ -56,6 +89,9 @@ type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
+	CreateContact(context.Context, *MsgCreateContact) (*MsgCreateContactResponse, error)
+	UpdateContact(context.Context, *MsgUpdateContact) (*MsgUpdateContactResponse, error)
+	DeleteContact(context.Context, *MsgDeleteContact) (*MsgDeleteContactResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
 
@@ -65,6 +101,15 @@ type UnimplementedMsgServer struct {
 
 func (UnimplementedMsgServer) UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateParams not implemented")
+}
+func (UnimplementedMsgServer) CreateContact(context.Context, *MsgCreateContact) (*MsgCreateContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateContact not implemented")
+}
+func (UnimplementedMsgServer) UpdateContact(context.Context, *MsgUpdateContact) (*MsgUpdateContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateContact not implemented")
+}
+func (UnimplementedMsgServer) DeleteContact(context.Context, *MsgDeleteContact) (*MsgDeleteContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteContact not implemented")
 }
 func (UnimplementedMsgServer) mustEmbedUnimplementedMsgServer() {}
 
@@ -97,6 +142,60 @@ func _Msg_UpdateParams_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_CreateContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateContact)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).CreateContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_CreateContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).CreateContact(ctx, req.(*MsgCreateContact))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_UpdateContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateContact)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).UpdateContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_UpdateContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).UpdateContact(ctx, req.(*MsgUpdateContact))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Msg_DeleteContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgDeleteContact)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).DeleteContact(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_DeleteContact_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).DeleteContact(ctx, req.(*MsgDeleteContact))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Msg_ServiceDesc is the grpc.ServiceDesc for Msg service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -107,6 +206,18 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateParams",
 			Handler:    _Msg_UpdateParams_Handler,
+		},
+		{
+			MethodName: "CreateContact",
+			Handler:    _Msg_CreateContact_Handler,
+		},
+		{
+			MethodName: "UpdateContact",
+			Handler:    _Msg_UpdateContact_Handler,
+		},
+		{
+			MethodName: "DeleteContact",
+			Handler:    _Msg_DeleteContact_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
