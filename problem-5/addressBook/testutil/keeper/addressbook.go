@@ -17,8 +17,8 @@ import (
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	"github.com/stretchr/testify/require"
 
-	"addressBook/x/addressbook/keeper"
-	"addressBook/x/addressbook/types"
+	"addressbook/x/addressbook/keeper"
+	"addressbook/x/addressbook/types"
 )
 
 func AddressbookKeeper(t testing.TB) (keeper.Keeper, sdk.Context) {

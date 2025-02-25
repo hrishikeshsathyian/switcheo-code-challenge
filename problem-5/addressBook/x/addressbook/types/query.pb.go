@@ -6,10 +6,6 @@ package types
 import (
 	context "context"
 	fmt "fmt"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-
 	query "github.com/cosmos/cosmos-sdk/types/query"
 	_ "github.com/cosmos/cosmos-sdk/types/tx/amino"
 	_ "github.com/cosmos/gogoproto/gogoproto"
@@ -19,6 +15,9 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	io "io"
+	math "math"
+	math_bits "math/bits"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -203,22 +202,22 @@ func (m *QueryShowContactResponse) GetContact() Contact {
 	return Contact{}
 }
 
-type QueryListContactsRequest struct {
+type QueryListContactRequest struct {
 	Pagination *query.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
 }
 
-func (m *QueryListContactsRequest) Reset()         { *m = QueryListContactsRequest{} }
-func (m *QueryListContactsRequest) String() string { return proto.CompactTextString(m) }
-func (*QueryListContactsRequest) ProtoMessage()    {}
-func (*QueryListContactsRequest) Descriptor() ([]byte, []int) {
+func (m *QueryListContactRequest) Reset()         { *m = QueryListContactRequest{} }
+func (m *QueryListContactRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryListContactRequest) ProtoMessage()    {}
+func (*QueryListContactRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_09150b97a7a6f377, []int{4}
 }
-func (m *QueryListContactsRequest) XXX_Unmarshal(b []byte) error {
+func (m *QueryListContactRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *QueryListContactsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *QueryListContactRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_QueryListContactsRequest.Marshal(b, m, deterministic)
+		return xxx_messageInfo_QueryListContactRequest.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -228,42 +227,42 @@ func (m *QueryListContactsRequest) XXX_Marshal(b []byte, deterministic bool) ([]
 		return b[:n], nil
 	}
 }
-func (m *QueryListContactsRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_QueryListContactsRequest.Merge(m, src)
+func (m *QueryListContactRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryListContactRequest.Merge(m, src)
 }
-func (m *QueryListContactsRequest) XXX_Size() int {
+func (m *QueryListContactRequest) XXX_Size() int {
 	return m.Size()
 }
-func (m *QueryListContactsRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_QueryListContactsRequest.DiscardUnknown(m)
+func (m *QueryListContactRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryListContactRequest.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_QueryListContactsRequest proto.InternalMessageInfo
+var xxx_messageInfo_QueryListContactRequest proto.InternalMessageInfo
 
-func (m *QueryListContactsRequest) GetPagination() *query.PageRequest {
+func (m *QueryListContactRequest) GetPagination() *query.PageRequest {
 	if m != nil {
 		return m.Pagination
 	}
 	return nil
 }
 
-type QueryListContactsResponse struct {
-	Contact    *Contact            `protobuf:"bytes,1,opt,name=contact,proto3" json:"contact,omitempty"`
+type QueryListContactResponse struct {
+	Contact    []Contact           `protobuf:"bytes,1,rep,name=contact,proto3" json:"contact"`
 	Pagination *query.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
 }
 
-func (m *QueryListContactsResponse) Reset()         { *m = QueryListContactsResponse{} }
-func (m *QueryListContactsResponse) String() string { return proto.CompactTextString(m) }
-func (*QueryListContactsResponse) ProtoMessage()    {}
-func (*QueryListContactsResponse) Descriptor() ([]byte, []int) {
+func (m *QueryListContactResponse) Reset()         { *m = QueryListContactResponse{} }
+func (m *QueryListContactResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryListContactResponse) ProtoMessage()    {}
+func (*QueryListContactResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_09150b97a7a6f377, []int{5}
 }
-func (m *QueryListContactsResponse) XXX_Unmarshal(b []byte) error {
+func (m *QueryListContactResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *QueryListContactsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *QueryListContactResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_QueryListContactsResponse.Marshal(b, m, deterministic)
+		return xxx_messageInfo_QueryListContactResponse.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -273,26 +272,26 @@ func (m *QueryListContactsResponse) XXX_Marshal(b []byte, deterministic bool) ([
 		return b[:n], nil
 	}
 }
-func (m *QueryListContactsResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_QueryListContactsResponse.Merge(m, src)
+func (m *QueryListContactResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryListContactResponse.Merge(m, src)
 }
-func (m *QueryListContactsResponse) XXX_Size() int {
+func (m *QueryListContactResponse) XXX_Size() int {
 	return m.Size()
 }
-func (m *QueryListContactsResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_QueryListContactsResponse.DiscardUnknown(m)
+func (m *QueryListContactResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryListContactResponse.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_QueryListContactsResponse proto.InternalMessageInfo
+var xxx_messageInfo_QueryListContactResponse proto.InternalMessageInfo
 
-func (m *QueryListContactsResponse) GetContact() *Contact {
+func (m *QueryListContactResponse) GetContact() []Contact {
 	if m != nil {
 		return m.Contact
 	}
 	return nil
 }
 
-func (m *QueryListContactsResponse) GetPagination() *query.PageResponse {
+func (m *QueryListContactResponse) GetPagination() *query.PageResponse {
 	if m != nil {
 		return m.Pagination
 	}
@@ -304,8 +303,8 @@ func init() {
 	proto.RegisterType((*QueryParamsResponse)(nil), "addressbook.addressbook.QueryParamsResponse")
 	proto.RegisterType((*QueryShowContactRequest)(nil), "addressbook.addressbook.QueryShowContactRequest")
 	proto.RegisterType((*QueryShowContactResponse)(nil), "addressbook.addressbook.QueryShowContactResponse")
-	proto.RegisterType((*QueryListContactsRequest)(nil), "addressbook.addressbook.QueryListContactsRequest")
-	proto.RegisterType((*QueryListContactsResponse)(nil), "addressbook.addressbook.QueryListContactsResponse")
+	proto.RegisterType((*QueryListContactRequest)(nil), "addressbook.addressbook.QueryListContactRequest")
+	proto.RegisterType((*QueryListContactResponse)(nil), "addressbook.addressbook.QueryListContactResponse")
 }
 
 func init() {
@@ -313,40 +312,39 @@ func init() {
 }
 
 var fileDescriptor_09150b97a7a6f377 = []byte{
-	// 518 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x94, 0x94, 0x41, 0x6b, 0x13, 0x41,
-	0x14, 0xc7, 0x33, 0xb1, 0x46, 0x9c, 0x8a, 0xe0, 0x58, 0x68, 0x5d, 0x64, 0x53, 0x57, 0x6d, 0x6b,
-	0x2c, 0x33, 0x26, 0x9e, 0xf4, 0x24, 0x2b, 0xe8, 0xc5, 0x43, 0x5d, 0x4f, 0x8a, 0x20, 0xb3, 0xd9,
-	0x61, 0x3b, 0xd8, 0xec, 0x6c, 0x33, 0x53, 0x6b, 0x11, 0x2f, 0x9e, 0x3d, 0x08, 0x7e, 0x01, 0x2f,
-	0x8a, 0x47, 0x3f, 0x46, 0x8f, 0x05, 0x2f, 0x9e, 0x44, 0x12, 0xa1, 0x5f, 0x43, 0x32, 0xf3, 0x56,
-	0x37, 0x24, 0x6b, 0x9a, 0x4b, 0x78, 0xec, 0xfe, 0xff, 0xef, 0xff, 0x7b, 0xfb, 0x1e, 0xc1, 0x57,
-	0x79, 0x92, 0xf4, 0x85, 0xd6, 0xb1, 0x52, 0x2f, 0x59, 0xb9, 0xde, 0xdd, 0x13, 0xfd, 0x03, 0x9a,
-	0xf7, 0x95, 0x51, 0x64, 0xb9, 0xf4, 0x82, 0x96, 0x6a, 0xef, 0x02, 0xef, 0xc9, 0x4c, 0x31, 0xfb,
-	0xeb, 0xb4, 0xde, 0x52, 0xaa, 0x52, 0x65, 0x4b, 0x36, 0xaa, 0xe0, 0xe9, 0xe5, 0x54, 0xa9, 0x74,
-	0x47, 0x30, 0x9e, 0x4b, 0xc6, 0xb3, 0x4c, 0x19, 0x6e, 0xa4, 0xca, 0x34, 0xbc, 0x6d, 0x75, 0x95,
-	0xee, 0x29, 0xcd, 0x62, 0xae, 0x85, 0x0b, 0x66, 0xaf, 0xda, 0xb1, 0x30, 0xbc, 0xcd, 0x72, 0x9e,
-	0xca, 0xcc, 0x8a, 0x41, 0x7b, 0xad, 0x0a, 0x38, 0xe7, 0x7d, 0xde, 0x2b, 0x3a, 0x5e, 0xaf, 0x52,
-	0x75, 0x55, 0x66, 0x78, 0xd7, 0x38, 0x59, 0xb0, 0x84, 0xc9, 0xe3, 0x51, 0xdc, 0x96, 0xf5, 0x46,
-	0x62, 0x77, 0x4f, 0x68, 0x13, 0x3c, 0xc5, 0x17, 0xc7, 0x9e, 0xea, 0x5c, 0x65, 0x5a, 0x90, 0x10,
-	0x37, 0x5c, 0xc6, 0x0a, 0x5a, 0x45, 0x1b, 0x8b, 0x9d, 0x26, 0xad, 0xf8, 0x2c, 0xd4, 0x19, 0xc3,
-	0xb3, 0x87, 0x3f, 0x9b, 0xb5, 0xaf, 0xc7, 0xdf, 0x5a, 0x28, 0x02, 0x67, 0x70, 0x03, 0x2f, 0xdb,
-	0xd6, 0x4f, 0xb6, 0xd5, 0xfe, 0x7d, 0x87, 0x02, 0xa9, 0xe4, 0x3c, 0xae, 0xcb, 0xc4, 0xb6, 0x5e,
-	0x88, 0xea, 0x32, 0x09, 0x9e, 0xe3, 0x95, 0x49, 0x29, 0xa0, 0xdc, 0xc3, 0x67, 0x60, 0x10, 0x60,
-	0x59, 0xad, 0x64, 0x01, 0x6b, 0xb8, 0x30, 0x82, 0x89, 0x0a, 0x5b, 0x10, 0x43, 0xf7, 0x47, 0x52,
-	0x1b, 0x90, 0x14, 0xf3, 0x93, 0x07, 0x18, 0xff, 0xfb, 0xec, 0x10, 0xb0, 0x46, 0xdd, 0x8e, 0xe8,
-	0x68, 0x47, 0xd4, 0x1d, 0x07, 0xec, 0x88, 0x6e, 0xf1, 0x54, 0x80, 0x37, 0x2a, 0x39, 0x83, 0x4f,
-	0x08, 0x5f, 0x9a, 0x12, 0x02, 0x33, 0xdc, 0x9d, 0x7b, 0x86, 0xbf, 0xf4, 0xe4, 0xe1, 0x18, 0x61,
-	0xdd, 0xda, 0xd7, 0x67, 0x12, 0xba, 0xe0, 0x32, 0x62, 0xe7, 0xf8, 0x14, 0x3e, 0x6d, 0x11, 0xc9,
-	0x7b, 0x84, 0x1b, 0x6e, 0x6f, 0xe4, 0x66, 0x25, 0xc8, 0xe4, 0xb1, 0x78, 0x9b, 0x27, 0x13, 0xbb,
-	0xec, 0x60, 0xfd, 0xdd, 0xf7, 0xdf, 0x1f, 0xeb, 0x57, 0x48, 0xb3, 0x38, 0xca, 0x70, 0xfa, 0x19,
-	0x93, 0x2f, 0x08, 0x2f, 0x96, 0x36, 0x4f, 0x6e, 0xfd, 0x3f, 0x66, 0xf2, 0x9e, 0xbc, 0xf6, 0x1c,
-	0x0e, 0xa0, 0xeb, 0x58, 0xba, 0x4d, 0xd2, 0xaa, 0xa4, 0xd3, 0xdb, 0x6a, 0xff, 0x05, 0x6c, 0x81,
-	0xbd, 0x91, 0xc9, 0x5b, 0xf2, 0x19, 0xe1, 0x73, 0xe5, 0xfd, 0x92, 0x19, 0xb9, 0x53, 0x0e, 0xce,
-	0xeb, 0xcc, 0x63, 0x01, 0x56, 0x6a, 0x59, 0x37, 0xc8, 0x5a, 0x25, 0xeb, 0x8e, 0xd4, 0xa6, 0x60,
-	0xd5, 0xe1, 0x9d, 0xc3, 0x81, 0x8f, 0x8e, 0x06, 0x3e, 0xfa, 0x35, 0xf0, 0xd1, 0x87, 0xa1, 0x5f,
-	0x3b, 0x1a, 0xfa, 0xb5, 0x1f, 0x43, 0xbf, 0xf6, 0xac, 0x59, 0x6e, 0xf0, 0x7a, 0xac, 0x85, 0x39,
-	0xc8, 0x85, 0x8e, 0x1b, 0xf6, 0xcf, 0xe2, 0xf6, 0x9f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x87, 0x6f,
-	0x73, 0x30, 0x2c, 0x05, 0x00, 0x00,
+	// 510 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x94, 0x41, 0x6b, 0x13, 0x41,
+	0x14, 0xc7, 0x33, 0x69, 0x8d, 0x38, 0x01, 0xc1, 0xb1, 0xd0, 0x12, 0x64, 0x53, 0x57, 0x6b, 0x34,
+	0xd6, 0x1d, 0x13, 0x4f, 0xde, 0x24, 0x82, 0x5e, 0x3c, 0xd4, 0xf5, 0xa4, 0x08, 0x32, 0xc9, 0x0e,
+	0xdb, 0xc1, 0x66, 0xdf, 0x36, 0x33, 0xb5, 0x16, 0xf1, 0xe2, 0xd9, 0x83, 0xe0, 0x27, 0xf0, 0xa0,
+	0x78, 0xf4, 0x63, 0xf4, 0x58, 0xf0, 0xe2, 0x49, 0x24, 0x11, 0xfc, 0x1a, 0x92, 0x99, 0x17, 0x9c,
+	0x98, 0x6e, 0xa2, 0xbd, 0x2c, 0x8f, 0x99, 0xf7, 0x7f, 0xff, 0xdf, 0x9b, 0xf7, 0x58, 0x7a, 0x49,
+	0x24, 0xc9, 0x40, 0x6a, 0xdd, 0x05, 0x78, 0xce, 0xfd, 0x78, 0x77, 0x4f, 0x0e, 0x0e, 0xa2, 0x7c,
+	0x00, 0x06, 0xd8, 0xaa, 0x77, 0x11, 0x79, 0x71, 0xed, 0x9c, 0xe8, 0xab, 0x0c, 0xb8, 0xfd, 0xba,
+	0xdc, 0xda, 0x4a, 0x0a, 0x29, 0xd8, 0x90, 0x8f, 0x23, 0x3c, 0xbd, 0x90, 0x02, 0xa4, 0x3b, 0x92,
+	0x8b, 0x5c, 0x71, 0x91, 0x65, 0x60, 0x84, 0x51, 0x90, 0x69, 0xbc, 0x6d, 0xf6, 0x40, 0xf7, 0x41,
+	0xf3, 0xae, 0xd0, 0xd2, 0x19, 0xf3, 0x17, 0xad, 0xae, 0x34, 0xa2, 0xc5, 0x73, 0x91, 0xaa, 0xcc,
+	0x26, 0x63, 0xee, 0xe5, 0x22, 0xe0, 0x5c, 0x0c, 0x44, 0x7f, 0x52, 0x71, 0xa3, 0x28, 0xab, 0x07,
+	0x99, 0x11, 0x3d, 0xe3, 0xd2, 0xc2, 0x15, 0xca, 0x1e, 0x8e, 0xed, 0xb6, 0xac, 0x36, 0x96, 0xbb,
+	0x7b, 0x52, 0x9b, 0xf0, 0x31, 0x3d, 0x3f, 0x75, 0xaa, 0x73, 0xc8, 0xb4, 0x64, 0x1d, 0x5a, 0x71,
+	0x1e, 0x6b, 0x64, 0x9d, 0x5c, 0xad, 0xb6, 0xeb, 0x51, 0xc1, 0xb3, 0x44, 0x4e, 0xd8, 0x39, 0x73,
+	0xf8, 0xbd, 0x5e, 0xfa, 0xfc, 0xeb, 0x4b, 0x93, 0xc4, 0xa8, 0x0c, 0xaf, 0xd1, 0x55, 0x5b, 0xfa,
+	0xd1, 0x36, 0xec, 0xdf, 0x75, 0x28, 0xe8, 0xca, 0xce, 0xd2, 0xb2, 0x4a, 0x6c, 0xe9, 0xe5, 0xb8,
+	0xac, 0x92, 0xf0, 0x29, 0x5d, 0x9b, 0x4d, 0x45, 0x94, 0x3b, 0xf4, 0x34, 0x36, 0x82, 0x2c, 0xeb,
+	0x85, 0x2c, 0x28, 0xed, 0x2c, 0x8f, 0x61, 0xe2, 0x89, 0x2c, 0x14, 0x08, 0xf2, 0x40, 0x69, 0xf3,
+	0x17, 0xc8, 0x3d, 0x4a, 0xff, 0xbc, 0x3a, 0xd6, 0xbf, 0x12, 0xb9, 0x11, 0x45, 0xe3, 0x11, 0x45,
+	0x6e, 0x37, 0x70, 0x44, 0xd1, 0x96, 0x48, 0x25, 0x6a, 0x63, 0x4f, 0x19, 0x7e, 0x24, 0xd8, 0xc1,
+	0x94, 0xc7, 0x71, 0x1d, 0x2c, 0x9d, 0xa0, 0x03, 0x76, 0x7f, 0x0a, 0xb3, 0x6c, 0x31, 0x1b, 0x0b,
+	0x31, 0x9d, 0xbd, 0xcf, 0xd9, 0x1e, 0x2d, 0xd1, 0x53, 0x96, 0x93, 0xbd, 0x25, 0xb4, 0xe2, 0x66,
+	0xc7, 0xae, 0x17, 0xe2, 0xcc, 0x2e, 0x4c, 0x6d, 0xf3, 0xdf, 0x92, 0x9d, 0x77, 0xd8, 0x78, 0xf3,
+	0xf5, 0xe7, 0xfb, 0xf2, 0x45, 0x56, 0xe7, 0xf3, 0x57, 0x99, 0x7d, 0x22, 0xb4, 0xea, 0x4d, 0x9f,
+	0xdd, 0x9c, 0x6f, 0x33, 0xbb, 0x53, 0xb5, 0xd6, 0x7f, 0x28, 0x90, 0xae, 0x6d, 0xe9, 0x36, 0x59,
+	0xb3, 0x90, 0x4e, 0x6f, 0xc3, 0xfe, 0x33, 0x9c, 0x02, 0x7f, 0xa5, 0x92, 0xd7, 0xec, 0x03, 0xa1,
+	0x55, 0x6f, 0xc8, 0x8b, 0x40, 0x67, 0x77, 0x6e, 0x11, 0xe8, 0x31, 0x1b, 0x14, 0xde, 0xb0, 0xa0,
+	0x0d, 0xb6, 0x51, 0x08, 0xba, 0xa3, 0xb4, 0x99, 0x80, 0x76, 0x6e, 0x1f, 0x0e, 0x03, 0x72, 0x34,
+	0x0c, 0xc8, 0x8f, 0x61, 0x40, 0xde, 0x8d, 0x82, 0xd2, 0xd1, 0x28, 0x28, 0x7d, 0x1b, 0x05, 0xa5,
+	0x27, 0x75, 0x5f, 0xf3, 0x72, 0xaa, 0x82, 0x39, 0xc8, 0xa5, 0xee, 0x56, 0xec, 0xcf, 0xe2, 0xd6,
+	0xef, 0x00, 0x00, 0x00, 0xff, 0xff, 0xce, 0x5b, 0xa6, 0xc0, 0x2c, 0x05, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -365,8 +363,8 @@ type QueryClient interface {
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
 	// Queries a list of ShowContact items.
 	ShowContact(ctx context.Context, in *QueryShowContactRequest, opts ...grpc.CallOption) (*QueryShowContactResponse, error)
-	// Queries a list of ListContacts items.
-	ListContacts(ctx context.Context, in *QueryListContactsRequest, opts ...grpc.CallOption) (*QueryListContactsResponse, error)
+	// Queries a list of ListContact items.
+	ListContact(ctx context.Context, in *QueryListContactRequest, opts ...grpc.CallOption) (*QueryListContactResponse, error)
 }
 
 type queryClient struct {
@@ -395,9 +393,9 @@ func (c *queryClient) ShowContact(ctx context.Context, in *QueryShowContactReque
 	return out, nil
 }
 
-func (c *queryClient) ListContacts(ctx context.Context, in *QueryListContactsRequest, opts ...grpc.CallOption) (*QueryListContactsResponse, error) {
-	out := new(QueryListContactsResponse)
-	err := c.cc.Invoke(ctx, "/addressbook.addressbook.Query/ListContacts", in, out, opts...)
+func (c *queryClient) ListContact(ctx context.Context, in *QueryListContactRequest, opts ...grpc.CallOption) (*QueryListContactResponse, error) {
+	out := new(QueryListContactResponse)
+	err := c.cc.Invoke(ctx, "/addressbook.addressbook.Query/ListContact", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -410,8 +408,8 @@ type QueryServer interface {
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
 	// Queries a list of ShowContact items.
 	ShowContact(context.Context, *QueryShowContactRequest) (*QueryShowContactResponse, error)
-	// Queries a list of ListContacts items.
-	ListContacts(context.Context, *QueryListContactsRequest) (*QueryListContactsResponse, error)
+	// Queries a list of ListContact items.
+	ListContact(context.Context, *QueryListContactRequest) (*QueryListContactResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -424,8 +422,8 @@ func (*UnimplementedQueryServer) Params(ctx context.Context, req *QueryParamsReq
 func (*UnimplementedQueryServer) ShowContact(ctx context.Context, req *QueryShowContactRequest) (*QueryShowContactResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ShowContact not implemented")
 }
-func (*UnimplementedQueryServer) ListContacts(ctx context.Context, req *QueryListContactsRequest) (*QueryListContactsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListContacts not implemented")
+func (*UnimplementedQueryServer) ListContact(ctx context.Context, req *QueryListContactRequest) (*QueryListContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListContact not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -468,20 +466,20 @@ func _Query_ShowContact_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Query_ListContacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(QueryListContactsRequest)
+func _Query_ListContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryListContactRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(QueryServer).ListContacts(ctx, in)
+		return srv.(QueryServer).ListContact(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/addressbook.addressbook.Query/ListContacts",
+		FullMethod: "/addressbook.addressbook.Query/ListContact",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(QueryServer).ListContacts(ctx, req.(*QueryListContactsRequest))
+		return srv.(QueryServer).ListContact(ctx, req.(*QueryListContactRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -500,8 +498,8 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 			Handler:    _Query_ShowContact_Handler,
 		},
 		{
-			MethodName: "ListContacts",
-			Handler:    _Query_ListContacts_Handler,
+			MethodName: "ListContact",
+			Handler:    _Query_ListContact_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -625,7 +623,7 @@ func (m *QueryShowContactResponse) MarshalToSizedBuffer(dAtA []byte) (int, error
 	return len(dAtA) - i, nil
 }
 
-func (m *QueryListContactsRequest) Marshal() (dAtA []byte, err error) {
+func (m *QueryListContactRequest) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -635,12 +633,12 @@ func (m *QueryListContactsRequest) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *QueryListContactsRequest) MarshalTo(dAtA []byte) (int, error) {
+func (m *QueryListContactRequest) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *QueryListContactsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *QueryListContactRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -660,7 +658,7 @@ func (m *QueryListContactsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error
 	return len(dAtA) - i, nil
 }
 
-func (m *QueryListContactsResponse) Marshal() (dAtA []byte, err error) {
+func (m *QueryListContactResponse) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -670,12 +668,12 @@ func (m *QueryListContactsResponse) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *QueryListContactsResponse) MarshalTo(dAtA []byte) (int, error) {
+func (m *QueryListContactResponse) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *QueryListContactsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *QueryListContactResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -692,17 +690,19 @@ func (m *QueryListContactsResponse) MarshalToSizedBuffer(dAtA []byte) (int, erro
 		i--
 		dAtA[i] = 0x12
 	}
-	if m.Contact != nil {
-		{
-			size, err := m.Contact.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.Contact) > 0 {
+		for iNdEx := len(m.Contact) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Contact[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintQuery(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0xa
 		}
-		i--
-		dAtA[i] = 0xa
 	}
 	return len(dAtA) - i, nil
 }
@@ -761,7 +761,7 @@ func (m *QueryShowContactResponse) Size() (n int) {
 	return n
 }
 
-func (m *QueryListContactsRequest) Size() (n int) {
+func (m *QueryListContactRequest) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -774,15 +774,17 @@ func (m *QueryListContactsRequest) Size() (n int) {
 	return n
 }
 
-func (m *QueryListContactsResponse) Size() (n int) {
+func (m *QueryListContactResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	if m.Contact != nil {
-		l = m.Contact.Size()
-		n += 1 + l + sovQuery(uint64(l))
+	if len(m.Contact) > 0 {
+		for _, e := range m.Contact {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
 	}
 	if m.Pagination != nil {
 		l = m.Pagination.Size()
@@ -1082,7 +1084,7 @@ func (m *QueryShowContactResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *QueryListContactsRequest) Unmarshal(dAtA []byte) error {
+func (m *QueryListContactRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -1105,10 +1107,10 @@ func (m *QueryListContactsRequest) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: QueryListContactsRequest: wiretype end group for non-group")
+			return fmt.Errorf("proto: QueryListContactRequest: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: QueryListContactsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: QueryListContactRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -1168,7 +1170,7 @@ func (m *QueryListContactsRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *QueryListContactsResponse) Unmarshal(dAtA []byte) error {
+func (m *QueryListContactResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -1191,10 +1193,10 @@ func (m *QueryListContactsResponse) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: QueryListContactsResponse: wiretype end group for non-group")
+			return fmt.Errorf("proto: QueryListContactResponse: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: QueryListContactsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: QueryListContactResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -1226,10 +1228,8 @@ func (m *QueryListContactsResponse) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.Contact == nil {
-				m.Contact = &Contact{}
-			}
-			if err := m.Contact.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.Contact = append(m.Contact, Contact{})
+			if err := m.Contact[len(m.Contact)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex

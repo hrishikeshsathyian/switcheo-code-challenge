@@ -3,8 +3,8 @@ package addressbook
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"addressBook/x/addressbook/keeper"
-	"addressBook/x/addressbook/types"
+	"addressbook/x/addressbook/keeper"
+	"addressbook/x/addressbook/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis state.

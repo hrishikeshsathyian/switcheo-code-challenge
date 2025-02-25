@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	keepertest "addressBook/testutil/keeper"
-	"addressBook/x/addressbook/types"
+	keepertest "addressbook/testutil/keeper"
+	"addressbook/x/addressbook/types"
 )
 
 func TestGetParams(t *testing.T) {

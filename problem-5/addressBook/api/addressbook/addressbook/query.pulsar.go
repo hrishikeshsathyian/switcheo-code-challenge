@@ -2,19 +2,18 @@
 package addressbook
 
 import (
-	fmt "fmt"
-	io "io"
-	reflect "reflect"
-	sync "sync"
-
 	_ "cosmossdk.io/api/amino"
 	v1beta1 "cosmossdk.io/api/cosmos/base/query/v1beta1"
+	fmt "fmt"
 	runtime "github.com/cosmos/cosmos-proto/runtime"
 	_ "github.com/cosmos/gogoproto/gogoproto"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoiface "google.golang.org/protobuf/runtime/protoiface"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	io "io"
+	reflect "reflect"
+	sync "sync"
 )
 
 var (
@@ -1648,25 +1647,25 @@ func (x *fastReflection_QueryShowContactResponse) ProtoMethods() *protoiface.Met
 }
 
 var (
-	md_QueryListContactsRequest            protoreflect.MessageDescriptor
-	fd_QueryListContactsRequest_pagination protoreflect.FieldDescriptor
+	md_QueryListContactRequest            protoreflect.MessageDescriptor
+	fd_QueryListContactRequest_pagination protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_addressbook_addressbook_query_proto_init()
-	md_QueryListContactsRequest = File_addressbook_addressbook_query_proto.Messages().ByName("QueryListContactsRequest")
-	fd_QueryListContactsRequest_pagination = md_QueryListContactsRequest.Fields().ByName("pagination")
+	md_QueryListContactRequest = File_addressbook_addressbook_query_proto.Messages().ByName("QueryListContactRequest")
+	fd_QueryListContactRequest_pagination = md_QueryListContactRequest.Fields().ByName("pagination")
 }
 
-var _ protoreflect.Message = (*fastReflection_QueryListContactsRequest)(nil)
+var _ protoreflect.Message = (*fastReflection_QueryListContactRequest)(nil)
 
-type fastReflection_QueryListContactsRequest QueryListContactsRequest
+type fastReflection_QueryListContactRequest QueryListContactRequest
 
-func (x *QueryListContactsRequest) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_QueryListContactsRequest)(x)
+func (x *QueryListContactRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryListContactRequest)(x)
 }
 
-func (x *QueryListContactsRequest) slowProtoReflect() protoreflect.Message {
+func (x *QueryListContactRequest) slowProtoReflect() protoreflect.Message {
 	mi := &file_addressbook_addressbook_query_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1678,43 +1677,43 @@ func (x *QueryListContactsRequest) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_QueryListContactsRequest_messageType fastReflection_QueryListContactsRequest_messageType
-var _ protoreflect.MessageType = fastReflection_QueryListContactsRequest_messageType{}
+var _fastReflection_QueryListContactRequest_messageType fastReflection_QueryListContactRequest_messageType
+var _ protoreflect.MessageType = fastReflection_QueryListContactRequest_messageType{}
 
-type fastReflection_QueryListContactsRequest_messageType struct{}
+type fastReflection_QueryListContactRequest_messageType struct{}
 
-func (x fastReflection_QueryListContactsRequest_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_QueryListContactsRequest)(nil)
+func (x fastReflection_QueryListContactRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryListContactRequest)(nil)
 }
-func (x fastReflection_QueryListContactsRequest_messageType) New() protoreflect.Message {
-	return new(fastReflection_QueryListContactsRequest)
+func (x fastReflection_QueryListContactRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryListContactRequest)
 }
-func (x fastReflection_QueryListContactsRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_QueryListContactsRequest
+func (x fastReflection_QueryListContactRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryListContactRequest
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_QueryListContactsRequest) Descriptor() protoreflect.MessageDescriptor {
-	return md_QueryListContactsRequest
+func (x *fastReflection_QueryListContactRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryListContactRequest
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_QueryListContactsRequest) Type() protoreflect.MessageType {
-	return _fastReflection_QueryListContactsRequest_messageType
+func (x *fastReflection_QueryListContactRequest) Type() protoreflect.MessageType {
+	return _fastReflection_QueryListContactRequest_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_QueryListContactsRequest) New() protoreflect.Message {
-	return new(fastReflection_QueryListContactsRequest)
+func (x *fastReflection_QueryListContactRequest) New() protoreflect.Message {
+	return new(fastReflection_QueryListContactRequest)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_QueryListContactsRequest) Interface() protoreflect.ProtoMessage {
-	return (*QueryListContactsRequest)(x)
+func (x *fastReflection_QueryListContactRequest) Interface() protoreflect.ProtoMessage {
+	return (*QueryListContactRequest)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -1722,10 +1721,10 @@ func (x *fastReflection_QueryListContactsRequest) Interface() protoreflect.Proto
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_QueryListContactsRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_QueryListContactRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 	if x.Pagination != nil {
 		value := protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
-		if !f(fd_QueryListContactsRequest_pagination, value) {
+		if !f(fd_QueryListContactRequest_pagination, value) {
 			return
 		}
 	}
@@ -1742,15 +1741,15 @@ func (x *fastReflection_QueryListContactsRequest) Range(f func(protoreflect.Fiel
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_QueryListContactsRequest) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_QueryListContactRequest) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsRequest.pagination":
+	case "addressbook.addressbook.QueryListContactRequest.pagination":
 		return x.Pagination != nil
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsRequest"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactRequest"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsRequest does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1760,15 +1759,15 @@ func (x *fastReflection_QueryListContactsRequest) Has(fd protoreflect.FieldDescr
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsRequest) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_QueryListContactRequest) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsRequest.pagination":
+	case "addressbook.addressbook.QueryListContactRequest.pagination":
 		x.Pagination = nil
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsRequest"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactRequest"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsRequest does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1778,16 +1777,16 @@ func (x *fastReflection_QueryListContactsRequest) Clear(fd protoreflect.FieldDes
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_QueryListContactsRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_QueryListContactRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "addressbook.addressbook.QueryListContactsRequest.pagination":
+	case "addressbook.addressbook.QueryListContactRequest.pagination":
 		value := x.Pagination
 		return protoreflect.ValueOfMessage(value.ProtoReflect())
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsRequest"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactRequest"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsRequest does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactRequest does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -1801,15 +1800,15 @@ func (x *fastReflection_QueryListContactsRequest) Get(descriptor protoreflect.Fi
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_QueryListContactRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsRequest.pagination":
+	case "addressbook.addressbook.QueryListContactRequest.pagination":
 		x.Pagination = value.Message().Interface().(*v1beta1.PageRequest)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsRequest"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactRequest"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsRequest does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1823,44 +1822,44 @@ func (x *fastReflection_QueryListContactsRequest) Set(fd protoreflect.FieldDescr
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_QueryListContactRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsRequest.pagination":
+	case "addressbook.addressbook.QueryListContactRequest.pagination":
 		if x.Pagination == nil {
 			x.Pagination = new(v1beta1.PageRequest)
 		}
 		return protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsRequest"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactRequest"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsRequest does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_QueryListContactsRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_QueryListContactRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsRequest.pagination":
+	case "addressbook.addressbook.QueryListContactRequest.pagination":
 		m := new(v1beta1.PageRequest)
 		return protoreflect.ValueOfMessage(m.ProtoReflect())
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsRequest"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactRequest"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsRequest does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_QueryListContactsRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_QueryListContactRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in addressbook.addressbook.QueryListContactsRequest", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in addressbook.addressbook.QueryListContactRequest", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -1868,7 +1867,7 @@ func (x *fastReflection_QueryListContactsRequest) WhichOneof(d protoreflect.Oneo
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_QueryListContactsRequest) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_QueryListContactRequest) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -1879,7 +1878,7 @@ func (x *fastReflection_QueryListContactsRequest) GetUnknown() protoreflect.RawF
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsRequest) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_QueryListContactRequest) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -1891,7 +1890,7 @@ func (x *fastReflection_QueryListContactsRequest) SetUnknown(fields protoreflect
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_QueryListContactsRequest) IsValid() bool {
+func (x *fastReflection_QueryListContactRequest) IsValid() bool {
 	return x != nil
 }
 
@@ -1901,9 +1900,9 @@ func (x *fastReflection_QueryListContactsRequest) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_QueryListContactsRequest) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_QueryListContactRequest) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*QueryListContactsRequest)
+		x := input.Message.Interface().(*QueryListContactRequest)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1929,7 +1928,7 @@ func (x *fastReflection_QueryListContactsRequest) ProtoMethods() *protoiface.Met
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*QueryListContactsRequest)
+		x := input.Message.Interface().(*QueryListContactRequest)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1973,7 +1972,7 @@ func (x *fastReflection_QueryListContactsRequest) ProtoMethods() *protoiface.Met
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*QueryListContactsRequest)
+		x := input.Message.Interface().(*QueryListContactRequest)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2005,10 +2004,10 @@ func (x *fastReflection_QueryListContactsRequest) ProtoMethods() *protoiface.Met
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactsRequest: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactRequest: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
@@ -2082,28 +2081,79 @@ func (x *fastReflection_QueryListContactsRequest) ProtoMethods() *protoiface.Met
 	}
 }
 
+var _ protoreflect.List = (*_QueryListContactResponse_1_list)(nil)
+
+type _QueryListContactResponse_1_list struct {
+	list *[]*Contact
+}
+
+func (x *_QueryListContactResponse_1_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_QueryListContactResponse_1_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_QueryListContactResponse_1_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Contact)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_QueryListContactResponse_1_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*Contact)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_QueryListContactResponse_1_list) AppendMutable() protoreflect.Value {
+	v := new(Contact)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryListContactResponse_1_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_QueryListContactResponse_1_list) NewElement() protoreflect.Value {
+	v := new(Contact)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_QueryListContactResponse_1_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
-	md_QueryListContactsResponse            protoreflect.MessageDescriptor
-	fd_QueryListContactsResponse_contact    protoreflect.FieldDescriptor
-	fd_QueryListContactsResponse_pagination protoreflect.FieldDescriptor
+	md_QueryListContactResponse            protoreflect.MessageDescriptor
+	fd_QueryListContactResponse_contact    protoreflect.FieldDescriptor
+	fd_QueryListContactResponse_pagination protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_addressbook_addressbook_query_proto_init()
-	md_QueryListContactsResponse = File_addressbook_addressbook_query_proto.Messages().ByName("QueryListContactsResponse")
-	fd_QueryListContactsResponse_contact = md_QueryListContactsResponse.Fields().ByName("contact")
-	fd_QueryListContactsResponse_pagination = md_QueryListContactsResponse.Fields().ByName("pagination")
+	md_QueryListContactResponse = File_addressbook_addressbook_query_proto.Messages().ByName("QueryListContactResponse")
+	fd_QueryListContactResponse_contact = md_QueryListContactResponse.Fields().ByName("contact")
+	fd_QueryListContactResponse_pagination = md_QueryListContactResponse.Fields().ByName("pagination")
 }
 
-var _ protoreflect.Message = (*fastReflection_QueryListContactsResponse)(nil)
+var _ protoreflect.Message = (*fastReflection_QueryListContactResponse)(nil)
 
-type fastReflection_QueryListContactsResponse QueryListContactsResponse
+type fastReflection_QueryListContactResponse QueryListContactResponse
 
-func (x *QueryListContactsResponse) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_QueryListContactsResponse)(x)
+func (x *QueryListContactResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_QueryListContactResponse)(x)
 }
 
-func (x *QueryListContactsResponse) slowProtoReflect() protoreflect.Message {
+func (x *QueryListContactResponse) slowProtoReflect() protoreflect.Message {
 	mi := &file_addressbook_addressbook_query_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2115,43 +2165,43 @@ func (x *QueryListContactsResponse) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_QueryListContactsResponse_messageType fastReflection_QueryListContactsResponse_messageType
-var _ protoreflect.MessageType = fastReflection_QueryListContactsResponse_messageType{}
+var _fastReflection_QueryListContactResponse_messageType fastReflection_QueryListContactResponse_messageType
+var _ protoreflect.MessageType = fastReflection_QueryListContactResponse_messageType{}
 
-type fastReflection_QueryListContactsResponse_messageType struct{}
+type fastReflection_QueryListContactResponse_messageType struct{}
 
-func (x fastReflection_QueryListContactsResponse_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_QueryListContactsResponse)(nil)
+func (x fastReflection_QueryListContactResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_QueryListContactResponse)(nil)
 }
-func (x fastReflection_QueryListContactsResponse_messageType) New() protoreflect.Message {
-	return new(fastReflection_QueryListContactsResponse)
+func (x fastReflection_QueryListContactResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_QueryListContactResponse)
 }
-func (x fastReflection_QueryListContactsResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_QueryListContactsResponse
+func (x fastReflection_QueryListContactResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryListContactResponse
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_QueryListContactsResponse) Descriptor() protoreflect.MessageDescriptor {
-	return md_QueryListContactsResponse
+func (x *fastReflection_QueryListContactResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_QueryListContactResponse
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_QueryListContactsResponse) Type() protoreflect.MessageType {
-	return _fastReflection_QueryListContactsResponse_messageType
+func (x *fastReflection_QueryListContactResponse) Type() protoreflect.MessageType {
+	return _fastReflection_QueryListContactResponse_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_QueryListContactsResponse) New() protoreflect.Message {
-	return new(fastReflection_QueryListContactsResponse)
+func (x *fastReflection_QueryListContactResponse) New() protoreflect.Message {
+	return new(fastReflection_QueryListContactResponse)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_QueryListContactsResponse) Interface() protoreflect.ProtoMessage {
-	return (*QueryListContactsResponse)(x)
+func (x *fastReflection_QueryListContactResponse) Interface() protoreflect.ProtoMessage {
+	return (*QueryListContactResponse)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -2159,16 +2209,16 @@ func (x *fastReflection_QueryListContactsResponse) Interface() protoreflect.Prot
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_QueryListContactsResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.Contact != nil {
-		value := protoreflect.ValueOfMessage(x.Contact.ProtoReflect())
-		if !f(fd_QueryListContactsResponse_contact, value) {
+func (x *fastReflection_QueryListContactResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if len(x.Contact) != 0 {
+		value := protoreflect.ValueOfList(&_QueryListContactResponse_1_list{list: &x.Contact})
+		if !f(fd_QueryListContactResponse_contact, value) {
 			return
 		}
 	}
 	if x.Pagination != nil {
 		value := protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
-		if !f(fd_QueryListContactsResponse_pagination, value) {
+		if !f(fd_QueryListContactResponse_pagination, value) {
 			return
 		}
 	}
@@ -2185,17 +2235,17 @@ func (x *fastReflection_QueryListContactsResponse) Range(f func(protoreflect.Fie
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_QueryListContactsResponse) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_QueryListContactResponse) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsResponse.contact":
-		return x.Contact != nil
-	case "addressbook.addressbook.QueryListContactsResponse.pagination":
+	case "addressbook.addressbook.QueryListContactResponse.contact":
+		return len(x.Contact) != 0
+	case "addressbook.addressbook.QueryListContactResponse.pagination":
 		return x.Pagination != nil
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactResponse"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2205,17 +2255,17 @@ func (x *fastReflection_QueryListContactsResponse) Has(fd protoreflect.FieldDesc
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsResponse) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_QueryListContactResponse) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsResponse.contact":
+	case "addressbook.addressbook.QueryListContactResponse.contact":
 		x.Contact = nil
-	case "addressbook.addressbook.QueryListContactsResponse.pagination":
+	case "addressbook.addressbook.QueryListContactResponse.pagination":
 		x.Pagination = nil
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactResponse"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2225,19 +2275,22 @@ func (x *fastReflection_QueryListContactsResponse) Clear(fd protoreflect.FieldDe
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_QueryListContactsResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_QueryListContactResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "addressbook.addressbook.QueryListContactsResponse.contact":
-		value := x.Contact
-		return protoreflect.ValueOfMessage(value.ProtoReflect())
-	case "addressbook.addressbook.QueryListContactsResponse.pagination":
+	case "addressbook.addressbook.QueryListContactResponse.contact":
+		if len(x.Contact) == 0 {
+			return protoreflect.ValueOfList(&_QueryListContactResponse_1_list{})
+		}
+		listValue := &_QueryListContactResponse_1_list{list: &x.Contact}
+		return protoreflect.ValueOfList(listValue)
+	case "addressbook.addressbook.QueryListContactResponse.pagination":
 		value := x.Pagination
 		return protoreflect.ValueOfMessage(value.ProtoReflect())
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactResponse"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsResponse does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactResponse does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -2251,17 +2304,19 @@ func (x *fastReflection_QueryListContactsResponse) Get(descriptor protoreflect.F
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_QueryListContactResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsResponse.contact":
-		x.Contact = value.Message().Interface().(*Contact)
-	case "addressbook.addressbook.QueryListContactsResponse.pagination":
+	case "addressbook.addressbook.QueryListContactResponse.contact":
+		lv := value.List()
+		clv := lv.(*_QueryListContactResponse_1_list)
+		x.Contact = *clv.list
+	case "addressbook.addressbook.QueryListContactResponse.pagination":
 		x.Pagination = value.Message().Interface().(*v1beta1.PageResponse)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactResponse"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2275,52 +2330,53 @@ func (x *fastReflection_QueryListContactsResponse) Set(fd protoreflect.FieldDesc
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_QueryListContactResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsResponse.contact":
+	case "addressbook.addressbook.QueryListContactResponse.contact":
 		if x.Contact == nil {
-			x.Contact = new(Contact)
+			x.Contact = []*Contact{}
 		}
-		return protoreflect.ValueOfMessage(x.Contact.ProtoReflect())
-	case "addressbook.addressbook.QueryListContactsResponse.pagination":
+		value := &_QueryListContactResponse_1_list{list: &x.Contact}
+		return protoreflect.ValueOfList(value)
+	case "addressbook.addressbook.QueryListContactResponse.pagination":
 		if x.Pagination == nil {
 			x.Pagination = new(v1beta1.PageResponse)
 		}
 		return protoreflect.ValueOfMessage(x.Pagination.ProtoReflect())
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactResponse"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_QueryListContactsResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_QueryListContactResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "addressbook.addressbook.QueryListContactsResponse.contact":
-		m := new(Contact)
-		return protoreflect.ValueOfMessage(m.ProtoReflect())
-	case "addressbook.addressbook.QueryListContactsResponse.pagination":
+	case "addressbook.addressbook.QueryListContactResponse.contact":
+		list := []*Contact{}
+		return protoreflect.ValueOfList(&_QueryListContactResponse_1_list{list: &list})
+	case "addressbook.addressbook.QueryListContactResponse.pagination":
 		m := new(v1beta1.PageResponse)
 		return protoreflect.ValueOfMessage(m.ProtoReflect())
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactsResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: addressbook.addressbook.QueryListContactResponse"))
 		}
-		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactsResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message addressbook.addressbook.QueryListContactResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_QueryListContactsResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_QueryListContactResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in addressbook.addressbook.QueryListContactsResponse", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in addressbook.addressbook.QueryListContactResponse", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -2328,7 +2384,7 @@ func (x *fastReflection_QueryListContactsResponse) WhichOneof(d protoreflect.One
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_QueryListContactsResponse) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_QueryListContactResponse) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -2339,7 +2395,7 @@ func (x *fastReflection_QueryListContactsResponse) GetUnknown() protoreflect.Raw
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_QueryListContactsResponse) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_QueryListContactResponse) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -2351,7 +2407,7 @@ func (x *fastReflection_QueryListContactsResponse) SetUnknown(fields protoreflec
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_QueryListContactsResponse) IsValid() bool {
+func (x *fastReflection_QueryListContactResponse) IsValid() bool {
 	return x != nil
 }
 
@@ -2361,9 +2417,9 @@ func (x *fastReflection_QueryListContactsResponse) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_QueryListContactsResponse) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_QueryListContactResponse) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*QueryListContactsResponse)
+		x := input.Message.Interface().(*QueryListContactResponse)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2375,9 +2431,11 @@ func (x *fastReflection_QueryListContactsResponse) ProtoMethods() *protoiface.Me
 		var n int
 		var l int
 		_ = l
-		if x.Contact != nil {
-			l = options.Size(x.Contact)
-			n += 1 + l + runtime.Sov(uint64(l))
+		if len(x.Contact) > 0 {
+			for _, e := range x.Contact {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
 		}
 		if x.Pagination != nil {
 			l = options.Size(x.Pagination)
@@ -2393,7 +2451,7 @@ func (x *fastReflection_QueryListContactsResponse) ProtoMethods() *protoiface.Me
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*QueryListContactsResponse)
+		x := input.Message.Interface().(*QueryListContactResponse)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2426,19 +2484,21 @@ func (x *fastReflection_QueryListContactsResponse) ProtoMethods() *protoiface.Me
 			i--
 			dAtA[i] = 0x12
 		}
-		if x.Contact != nil {
-			encoded, err := options.Marshal(x.Contact)
-			if err != nil {
-				return protoiface.MarshalOutput{
-					NoUnkeyedLiterals: input.NoUnkeyedLiterals,
-					Buf:               input.Buf,
-				}, err
+		if len(x.Contact) > 0 {
+			for iNdEx := len(x.Contact) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.Contact[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0xa
 			}
-			i -= len(encoded)
-			copy(dAtA[i:], encoded)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
-			i--
-			dAtA[i] = 0xa
 		}
 		if input.Buf != nil {
 			input.Buf = append(input.Buf, dAtA...)
@@ -2451,7 +2511,7 @@ func (x *fastReflection_QueryListContactsResponse) ProtoMethods() *protoiface.Me
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*QueryListContactsResponse)
+		x := input.Message.Interface().(*QueryListContactResponse)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2483,10 +2543,10 @@ func (x *fastReflection_QueryListContactsResponse) ProtoMethods() *protoiface.Me
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactsResponse: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactResponse: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: QueryListContactResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
@@ -2518,10 +2578,8 @@ func (x *fastReflection_QueryListContactsResponse) ProtoMethods() *protoiface.Me
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				if x.Contact == nil {
-					x.Contact = &Contact{}
-				}
-				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Contact); err != nil {
+				x.Contact = append(x.Contact, &Contact{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.Contact[len(x.Contact)-1]); err != nil {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
 				}
 				iNdEx = postIndex
@@ -2743,7 +2801,7 @@ func (x *QueryShowContactResponse) GetContact() *Contact {
 	return nil
 }
 
-type QueryListContactsRequest struct {
+type QueryListContactRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -2751,8 +2809,8 @@ type QueryListContactsRequest struct {
 	Pagination *v1beta1.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
 }
 
-func (x *QueryListContactsRequest) Reset() {
-	*x = QueryListContactsRequest{}
+func (x *QueryListContactRequest) Reset() {
+	*x = QueryListContactRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_addressbook_addressbook_query_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2760,35 +2818,35 @@ func (x *QueryListContactsRequest) Reset() {
 	}
 }
 
-func (x *QueryListContactsRequest) String() string {
+func (x *QueryListContactRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryListContactsRequest) ProtoMessage() {}
+func (*QueryListContactRequest) ProtoMessage() {}
 
-// Deprecated: Use QueryListContactsRequest.ProtoReflect.Descriptor instead.
-func (*QueryListContactsRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use QueryListContactRequest.ProtoReflect.Descriptor instead.
+func (*QueryListContactRequest) Descriptor() ([]byte, []int) {
 	return file_addressbook_addressbook_query_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *QueryListContactsRequest) GetPagination() *v1beta1.PageRequest {
+func (x *QueryListContactRequest) GetPagination() *v1beta1.PageRequest {
 	if x != nil {
 		return x.Pagination
 	}
 	return nil
 }
 
-type QueryListContactsResponse struct {
+type QueryListContactResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Contact    *Contact              `protobuf:"bytes,1,opt,name=contact,proto3" json:"contact,omitempty"`
+	Contact    []*Contact            `protobuf:"bytes,1,rep,name=contact,proto3" json:"contact,omitempty"`
 	Pagination *v1beta1.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
 }
 
-func (x *QueryListContactsResponse) Reset() {
-	*x = QueryListContactsResponse{}
+func (x *QueryListContactResponse) Reset() {
+	*x = QueryListContactResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_addressbook_addressbook_query_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2796,25 +2854,25 @@ func (x *QueryListContactsResponse) Reset() {
 	}
 }
 
-func (x *QueryListContactsResponse) String() string {
+func (x *QueryListContactResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*QueryListContactsResponse) ProtoMessage() {}
+func (*QueryListContactResponse) ProtoMessage() {}
 
-// Deprecated: Use QueryListContactsResponse.ProtoReflect.Descriptor instead.
-func (*QueryListContactsResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use QueryListContactResponse.ProtoReflect.Descriptor instead.
+func (*QueryListContactResponse) Descriptor() ([]byte, []int) {
 	return file_addressbook_addressbook_query_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *QueryListContactsResponse) GetContact() *Contact {
+func (x *QueryListContactResponse) GetContact() []*Contact {
 	if x != nil {
 		return x.Contact
 	}
 	return nil
 }
 
-func (x *QueryListContactsResponse) GetPagination() *v1beta1.PageResponse {
+func (x *QueryListContactResponse) GetPagination() *v1beta1.PageResponse {
 	if x != nil {
 		return x.Pagination
 	}
@@ -2855,58 +2913,58 @@ var file_addressbook_addressbook_query_proto_rawDesc = []byte{
 	0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73,
 	0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f,
 	0x6b, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52,
-	0x07, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x22, 0x62, 0x0a, 0x18, 0x51, 0x75, 0x65, 0x72,
-	0x79, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x73, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x46, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69,
-	0x6f, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f, 0x73, 0x6d, 0x6f,
-	0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x62,
-	0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xa0, 0x01, 0x0a,
-	0x19, 0x51, 0x75, 0x65, 0x72, 0x79, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63,
-	0x74, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3a, 0x0a, 0x07, 0x63, 0x6f,
-	0x6e, 0x74, 0x61, 0x63, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x64,
-	0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73,
-	0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x07, 0x63,
-	0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x47, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27, 0x2e, 0x63, 0x6f, 0x73,
-	0x6d, 0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e, 0x76,
-	0x31, 0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x32,
-	0xe7, 0x03, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x8c, 0x01, 0x0a, 0x06, 0x50, 0x61,
-	0x72, 0x61, 0x6d, 0x73, 0x12, 0x2b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f,
-	0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x51,
-	0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x2c, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e,
-	0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x51, 0x75, 0x65, 0x72,
-	0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x12, 0x1f, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73,
-	0x73, 0x42, 0x6f, 0x6f, 0x6b, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f,
-	0x6b, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0xa6, 0x01, 0x0a, 0x0b, 0x53, 0x68, 0x6f,
-	0x77, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x30, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65,
+	0x07, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x22, 0x61, 0x0a, 0x17, 0x51, 0x75, 0x65, 0x72,
+	0x79, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x46, 0x0a, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73,
+	0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65, 0x72, 0x79, 0x2e, 0x76, 0x31, 0x62, 0x65,
+	0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52,
+	0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xa5, 0x01, 0x0a, 0x18,
+	0x51, 0x75, 0x65, 0x72, 0x79, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x40, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74,
+	0x61, 0x63, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x20, 0x2e, 0x61, 0x64, 0x64, 0x72,
+	0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62,
+	0x6f, 0x6f, 0x6b, 0x2e, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x42, 0x04, 0xc8, 0xde, 0x1f,
+	0x00, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x47, 0x0a, 0x0a, 0x70, 0x61,
+	0x67, 0x69, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x27,
+	0x2e, 0x63, 0x6f, 0x73, 0x6d, 0x6f, 0x73, 0x2e, 0x62, 0x61, 0x73, 0x65, 0x2e, 0x71, 0x75, 0x65,
+	0x72, 0x79, 0x2e, 0x76, 0x31, 0x62, 0x65, 0x74, 0x61, 0x31, 0x2e, 0x50, 0x61, 0x67, 0x65, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x52, 0x0a, 0x70, 0x61, 0x67, 0x69, 0x6e, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x32, 0xe3, 0x03, 0x0a, 0x05, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x8c, 0x01,
+	0x0a, 0x06, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x2b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65,
 	0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f,
-	0x6f, 0x6b, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x53, 0x68, 0x6f, 0x77, 0x43, 0x6f, 0x6e, 0x74,
-	0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x61, 0x64, 0x64,
-	0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
-	0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x53, 0x68, 0x6f, 0x77, 0x43, 0x6f,
-	0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x32, 0x82,
-	0xd3, 0xe4, 0x93, 0x02, 0x2c, 0x12, 0x2a, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x42,
-	0x6f, 0x6f, 0x6b, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2f,
-	0x73, 0x68, 0x6f, 0x77, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x2f, 0x7b, 0x69, 0x64,
-	0x7d, 0x12, 0xa5, 0x01, 0x0a, 0x0c, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63,
-	0x74, 0x73, 0x12, 0x31, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b,
-	0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x51, 0x75, 0x65,
-	0x72, 0x79, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x73, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x32, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62,
+	0x6f, 0x6b, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x2c, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62,
+	0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e,
+	0x51, 0x75, 0x65, 0x72, 0x79, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21, 0x12, 0x1f, 0x2f, 0x61, 0x64,
+	0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73,
+	0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0xa6, 0x01, 0x0a,
+	0x0b, 0x53, 0x68, 0x6f, 0x77, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x30, 0x2e, 0x61,
+	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65,
+	0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x53, 0x68, 0x6f, 0x77,
+	0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31,
+	0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64,
+	0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x53, 0x68,
+	0x6f, 0x77, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x32, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x2c, 0x12, 0x2a, 0x2f, 0x61, 0x64, 0x64, 0x72,
+	0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62,
+	0x6f, 0x6f, 0x6b, 0x2f, 0x73, 0x68, 0x6f, 0x77, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74,
+	0x2f, 0x7b, 0x69, 0x64, 0x7d, 0x12, 0xa1, 0x01, 0x0a, 0x0b, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f,
+	0x6e, 0x74, 0x61, 0x63, 0x74, 0x12, 0x30, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62,
 	0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e,
 	0x51, 0x75, 0x65, 0x72, 0x79, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74,
-	0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2e, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x28, 0x12, 0x26, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x42, 0x6f, 0x6f, 0x6b, 0x2f,
-	0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2f, 0x6c, 0x69, 0x73, 0x74,
-	0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x73, 0x42, 0xcf, 0x01, 0x0a, 0x1b, 0x63, 0x6f,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x31, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73,
+	0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f,
+	0x6b, 0x2e, 0x51, 0x75, 0x65, 0x72, 0x79, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x61,
+	0x63, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2d, 0x82, 0xd3, 0xe4, 0x93,
+	0x02, 0x27, 0x12, 0x25, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b,
+	0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2f, 0x6c, 0x69, 0x73,
+	0x74, 0x5f, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x63, 0x74, 0x42, 0xcf, 0x01, 0x0a, 0x1b, 0x63, 0x6f,
 	0x6d, 0x2e, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x61, 0x64,
 	0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b, 0x42, 0x0a, 0x51, 0x75, 0x65, 0x72, 0x79,
 	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x27, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
-	0x42, 0x6f, 0x6f, 0x6b, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
+	0x62, 0x6f, 0x6f, 0x6b, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
 	0x62, 0x6f, 0x6f, 0x6b, 0x2f, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b,
 	0xa2, 0x02, 0x03, 0x41, 0x41, 0x58, 0xaa, 0x02, 0x17, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73,
 	0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x62, 0x6f, 0x6f, 0x6b,
@@ -2933,29 +2991,29 @@ func file_addressbook_addressbook_query_proto_rawDescGZIP() []byte {
 
 var file_addressbook_addressbook_query_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_addressbook_addressbook_query_proto_goTypes = []interface{}{
-	(*QueryParamsRequest)(nil),        // 0: addressbook.addressbook.QueryParamsRequest
-	(*QueryParamsResponse)(nil),       // 1: addressbook.addressbook.QueryParamsResponse
-	(*QueryShowContactRequest)(nil),   // 2: addressbook.addressbook.QueryShowContactRequest
-	(*QueryShowContactResponse)(nil),  // 3: addressbook.addressbook.QueryShowContactResponse
-	(*QueryListContactsRequest)(nil),  // 4: addressbook.addressbook.QueryListContactsRequest
-	(*QueryListContactsResponse)(nil), // 5: addressbook.addressbook.QueryListContactsResponse
-	(*Params)(nil),                    // 6: addressbook.addressbook.Params
-	(*Contact)(nil),                   // 7: addressbook.addressbook.Contact
-	(*v1beta1.PageRequest)(nil),       // 8: cosmos.base.query.v1beta1.PageRequest
-	(*v1beta1.PageResponse)(nil),      // 9: cosmos.base.query.v1beta1.PageResponse
+	(*QueryParamsRequest)(nil),       // 0: addressbook.addressbook.QueryParamsRequest
+	(*QueryParamsResponse)(nil),      // 1: addressbook.addressbook.QueryParamsResponse
+	(*QueryShowContactRequest)(nil),  // 2: addressbook.addressbook.QueryShowContactRequest
+	(*QueryShowContactResponse)(nil), // 3: addressbook.addressbook.QueryShowContactResponse
+	(*QueryListContactRequest)(nil),  // 4: addressbook.addressbook.QueryListContactRequest
+	(*QueryListContactResponse)(nil), // 5: addressbook.addressbook.QueryListContactResponse
+	(*Params)(nil),                   // 6: addressbook.addressbook.Params
+	(*Contact)(nil),                  // 7: addressbook.addressbook.Contact
+	(*v1beta1.PageRequest)(nil),      // 8: cosmos.base.query.v1beta1.PageRequest
+	(*v1beta1.PageResponse)(nil),     // 9: cosmos.base.query.v1beta1.PageResponse
 }
 var file_addressbook_addressbook_query_proto_depIdxs = []int32{
 	6, // 0: addressbook.addressbook.QueryParamsResponse.params:type_name -> addressbook.addressbook.Params
 	7, // 1: addressbook.addressbook.QueryShowContactResponse.contact:type_name -> addressbook.addressbook.Contact
-	8, // 2: addressbook.addressbook.QueryListContactsRequest.pagination:type_name -> cosmos.base.query.v1beta1.PageRequest
-	7, // 3: addressbook.addressbook.QueryListContactsResponse.contact:type_name -> addressbook.addressbook.Contact
-	9, // 4: addressbook.addressbook.QueryListContactsResponse.pagination:type_name -> cosmos.base.query.v1beta1.PageResponse
+	8, // 2: addressbook.addressbook.QueryListContactRequest.pagination:type_name -> cosmos.base.query.v1beta1.PageRequest
+	7, // 3: addressbook.addressbook.QueryListContactResponse.contact:type_name -> addressbook.addressbook.Contact
+	9, // 4: addressbook.addressbook.QueryListContactResponse.pagination:type_name -> cosmos.base.query.v1beta1.PageResponse
 	0, // 5: addressbook.addressbook.Query.Params:input_type -> addressbook.addressbook.QueryParamsRequest
 	2, // 6: addressbook.addressbook.Query.ShowContact:input_type -> addressbook.addressbook.QueryShowContactRequest
-	4, // 7: addressbook.addressbook.Query.ListContacts:input_type -> addressbook.addressbook.QueryListContactsRequest
+	4, // 7: addressbook.addressbook.Query.ListContact:input_type -> addressbook.addressbook.QueryListContactRequest
 	1, // 8: addressbook.addressbook.Query.Params:output_type -> addressbook.addressbook.QueryParamsResponse
 	3, // 9: addressbook.addressbook.Query.ShowContact:output_type -> addressbook.addressbook.QueryShowContactResponse
-	5, // 10: addressbook.addressbook.Query.ListContacts:output_type -> addressbook.addressbook.QueryListContactsResponse
+	5, // 10: addressbook.addressbook.Query.ListContact:output_type -> addressbook.addressbook.QueryListContactResponse
 	8, // [8:11] is the sub-list for method output_type
 	5, // [5:8] is the sub-list for method input_type
 	5, // [5:5] is the sub-list for extension type_name
@@ -3020,7 +3078,7 @@ func file_addressbook_addressbook_query_proto_init() {
 			}
 		}
 		file_addressbook_addressbook_query_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QueryListContactsRequest); i {
+			switch v := v.(*QueryListContactRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -3032,7 +3090,7 @@ func file_addressbook_addressbook_query_proto_init() {
 			}
 		}
 		file_addressbook_addressbook_query_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*QueryListContactsResponse); i {
+			switch v := v.(*QueryListContactResponse); i {
 			case 0:
 				return &v.state
 			case 1:

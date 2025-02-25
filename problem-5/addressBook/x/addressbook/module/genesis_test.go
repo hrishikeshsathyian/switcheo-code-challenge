@@ -3,10 +3,10 @@ package addressbook_test
 import (
 	"testing"
 
-	keepertest "addressBook/testutil/keeper"
-	"addressBook/testutil/nullify"
-	addressbook "addressBook/x/addressbook/module"
-	"addressBook/x/addressbook/types"
+	keepertest "addressbook/testutil/keeper"
+	"addressbook/testutil/nullify"
+	addressbook "addressbook/x/addressbook/module"
+	"addressbook/x/addressbook/types"
 
 	"github.com/stretchr/testify/require"
 )

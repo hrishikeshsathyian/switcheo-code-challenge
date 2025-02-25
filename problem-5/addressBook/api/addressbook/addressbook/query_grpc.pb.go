@@ -8,7 +8,6 @@ package addressbook
 
 import (
 	context "context"
-
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -20,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Query_Params_FullMethodName       = "/addressbook.addressbook.Query/Params"
-	Query_ShowContact_FullMethodName  = "/addressbook.addressbook.Query/ShowContact"
-	Query_ListContacts_FullMethodName = "/addressbook.addressbook.Query/ListContacts"
+	Query_Params_FullMethodName      = "/addressbook.addressbook.Query/Params"
+	Query_ShowContact_FullMethodName = "/addressbook.addressbook.Query/ShowContact"
+	Query_ListContact_FullMethodName = "/addressbook.addressbook.Query/ListContact"
 )
 
 // QueryClient is the client API for Query service.
@@ -33,8 +32,8 @@ type QueryClient interface {
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
 	// Queries a list of ShowContact items.
 	ShowContact(ctx context.Context, in *QueryShowContactRequest, opts ...grpc.CallOption) (*QueryShowContactResponse, error)
-	// Queries a list of ListContacts items.
-	ListContacts(ctx context.Context, in *QueryListContactsRequest, opts ...grpc.CallOption) (*QueryListContactsResponse, error)
+	// Queries a list of ListContact items.
+	ListContact(ctx context.Context, in *QueryListContactRequest, opts ...grpc.CallOption) (*QueryListContactResponse, error)
 }
 
 type queryClient struct {
@@ -63,9 +62,9 @@ func (c *queryClient) ShowContact(ctx context.Context, in *QueryShowContactReque
 	return out, nil
 }
 
-func (c *queryClient) ListContacts(ctx context.Context, in *QueryListContactsRequest, opts ...grpc.CallOption) (*QueryListContactsResponse, error) {
-	out := new(QueryListContactsResponse)
-	err := c.cc.Invoke(ctx, Query_ListContacts_FullMethodName, in, out, opts...)
+func (c *queryClient) ListContact(ctx context.Context, in *QueryListContactRequest, opts ...grpc.CallOption) (*QueryListContactResponse, error) {
+	out := new(QueryListContactResponse)
+	err := c.cc.Invoke(ctx, Query_ListContact_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,8 +79,8 @@ type QueryServer interface {
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
 	// Queries a list of ShowContact items.
 	ShowContact(context.Context, *QueryShowContactRequest) (*QueryShowContactResponse, error)
-	// Queries a list of ListContacts items.
-	ListContacts(context.Context, *QueryListContactsRequest) (*QueryListContactsResponse, error)
+	// Queries a list of ListContact items.
+	ListContact(context.Context, *QueryListContactRequest) (*QueryListContactResponse, error)
 	mustEmbedUnimplementedQueryServer()
 }
 
@@ -95,8 +94,8 @@ func (UnimplementedQueryServer) Params(context.Context, *QueryParamsRequest) (*Q
 func (UnimplementedQueryServer) ShowContact(context.Context, *QueryShowContactRequest) (*QueryShowContactResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ShowContact not implemented")
 }
-func (UnimplementedQueryServer) ListContacts(context.Context, *QueryListContactsRequest) (*QueryListContactsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListContacts not implemented")
+func (UnimplementedQueryServer) ListContact(context.Context, *QueryListContactRequest) (*QueryListContactResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListContact not implemented")
 }
 func (UnimplementedQueryServer) mustEmbedUnimplementedQueryServer() {}
 
@@ -147,20 +146,20 @@ func _Query_ShowContact_Handler(srv interface{}, ctx context.Context, dec func(i
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Query_ListContacts_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(QueryListContactsRequest)
+func _Query_ListContact_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryListContactRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(QueryServer).ListContacts(ctx, in)
+		return srv.(QueryServer).ListContact(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Query_ListContacts_FullMethodName,
+		FullMethod: Query_ListContact_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(QueryServer).ListContacts(ctx, req.(*QueryListContactsRequest))
+		return srv.(QueryServer).ListContact(ctx, req.(*QueryListContactRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -181,8 +180,8 @@ var Query_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Query_ShowContact_Handler,
 		},
 		{
-			MethodName: "ListContacts",
-			Handler:    _Query_ListContacts_Handler,
+			MethodName: "ListContact",
+			Handler:    _Query_ListContact_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

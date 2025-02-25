@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"addressBook/x/addressbook/types"
+	"addressbook/x/addressbook/types"
 )
 
 type msgServer struct {

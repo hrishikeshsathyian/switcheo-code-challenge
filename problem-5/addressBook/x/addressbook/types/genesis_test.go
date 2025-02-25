@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"addressBook/x/addressbook/types"
+	"addressbook/x/addressbook/types"
 
 	"github.com/stretchr/testify/require"
 )

@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	keepertest "addressBook/testutil/keeper"
-	"addressBook/x/addressbook/keeper"
-	"addressBook/x/addressbook/types"
+	keepertest "addressbook/testutil/keeper"
+	"addressbook/x/addressbook/keeper"
+	"addressbook/x/addressbook/types"
 )
 
 func setupMsgServer(t testing.TB) (keeper.Keeper, types.MsgServer, context.Context) {

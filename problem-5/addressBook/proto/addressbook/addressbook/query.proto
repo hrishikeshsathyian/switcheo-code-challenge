@@ -9,26 +9,26 @@ import "cosmos/base/query/v1beta1/pagination.proto";
 import "addressbook/addressbook/params.proto";
 import "addressbook/addressbook/contact.proto";
 
-option go_package = "addressBook/x/addressbook/types";
+option go_package = "addressbook/x/addressbook/types";
 
 // Query defines the gRPC querier service.
 service Query {
   
   // Parameters queries the parameters of the module.
   rpc Params (QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/addressBook/addressbook/params";
+    option (google.api.http).get = "/addressbook/addressbook/params";
   
   }
   
   // Queries a list of ShowContact items.
   rpc ShowContact (QueryShowContactRequest) returns (QueryShowContactResponse) {
-    option (google.api.http).get = "/addressBook/addressbook/show_contact/{id}";
+    option (google.api.http).get = "/addressbook/addressbook/show_contact/{id}";
   
   }
   
-  // Queries a list of ListContacts items.
-  rpc ListContacts (QueryListContactsRequest) returns (QueryListContactsResponse) {
-    option (google.api.http).get = "/addressBook/addressbook/list_contacts";
+  // Queries a list of ListContact items.
+  rpc ListContact (QueryListContactRequest) returns (QueryListContactResponse) {
+    option (google.api.http).get = "/addressbook/addressbook/list_contact";
   
   }
 }
@@ -50,12 +50,12 @@ message QueryShowContactResponse {
   Contact contact = 1 [(gogoproto.nullable) = false];
 }
 
-message QueryListContactsRequest {
-  cosmos.base.query.v1beta1.PageRequest pagination = 1 [(gogoproto.nullable) = false];;
+message QueryListContactRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
 }
 
-message QueryListContactsResponse {
-  repeated Contact                                contact    = 1 [(gogoproto.nullable) = false];
+message QueryListContactResponse {
+  repeated Contact contact = 1 [(gogoproto.nullable) = false];
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
 

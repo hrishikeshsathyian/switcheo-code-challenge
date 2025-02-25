@@ -20,9 +20,9 @@ import (
 
 	// this line is used by starport scaffolding # 1
 
-	modulev1 "addressBook/api/addressbook/addressbook/module"
-	"addressBook/x/addressbook/keeper"
-	"addressBook/x/addressbook/types"
+	modulev1 "addressbook/api/addressbook/addressbook/module"
+	"addressbook/x/addressbook/keeper"
+	"addressbook/x/addressbook/types"
 )
 
 var (

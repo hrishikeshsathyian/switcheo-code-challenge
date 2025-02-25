@@ -8,9 +8,9 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 
-	"addressBook/testutil/sample"
-	addressbooksimulation "addressBook/x/addressbook/simulation"
-	"addressBook/x/addressbook/types"
+	"addressbook/testutil/sample"
+	addressbooksimulation "addressbook/x/addressbook/simulation"
+	"addressbook/x/addressbook/types"
 )
 
 // avoid unused import issue

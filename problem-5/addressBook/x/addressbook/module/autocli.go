@@ -3,7 +3,7 @@ package addressbook
 import (
 	autocliv1 "cosmossdk.io/api/cosmos/autocli/v1"
 
-	modulev1 "addressBook/api/addressbook/addressbook"
+	modulev1 "addressbook/api/addressbook/addressbook"
 )
 
 // AutoCLIOptions implements the autocli.HasAutoCLIConfig interface.
@@ -25,9 +25,9 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				},
 
 				{
-					RpcMethod:      "ListContacts",
-					Use:            "list-contacts",
-					Short:          "Query list-contacts",
+					RpcMethod:      "ListContact",
+					Use:            "list-contact",
+					Short:          "Query list-contact",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{},
 				},
 

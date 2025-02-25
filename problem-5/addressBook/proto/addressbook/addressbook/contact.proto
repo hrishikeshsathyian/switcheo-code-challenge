@@ -1,0 +1,15 @@
+syntax = "proto3";
+package addressbook.addressbook;
+
+option go_package = "addressbook/x/addressbook/types";
+
+message Contact {
+  
+  string firstName = 1; 
+  string lastName = 2; 
+  string phone = 3; 
+  string email = 4; 
+  string address = 5; 
+  string creator = 6; 
+  uint64 id = 7; 
+}
