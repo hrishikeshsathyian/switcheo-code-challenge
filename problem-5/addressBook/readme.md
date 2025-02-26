@@ -27,14 +27,6 @@ example usage:
 addressbookd tx addressbook create-contact Hrishikesh Sathyian 87175643 hrishi@gmail.com Yishun --from Alice --chain-id addressbook
 ```
 
-## Creating a Contact 
-```
-addressbookd tx addressbook create-contact [first-name] [last-name] [phone] [email] [address] [flags]
-```
-example usage: 
-```
-addressbookd tx addressbook create-contact Hrishikesh Sathyian 87175643 hrishi@gmail.com Yishun --from Alice --chain-id addressbook
-```
 
 ## Updating a Contact 
 ```
