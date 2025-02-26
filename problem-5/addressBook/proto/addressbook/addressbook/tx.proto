@@ -47,6 +47,7 @@ message MsgCreateContact {
   string phone     = 4;
   string email     = 5;
   string address   = 6;
+  string nickname = 7;
 }
 
 message MsgCreateContactResponse {
@@ -61,7 +62,8 @@ message MsgUpdateContact {
   string phone     = 4;
   string email     = 5;
   string address   = 6;
-  uint64 id        = 7;
+  string nickname = 7;
+  uint64 id        = 8;
 }
 
 message MsgUpdateContactResponse {}

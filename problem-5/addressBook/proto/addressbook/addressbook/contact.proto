@@ -12,4 +12,5 @@ message Contact {
   string address = 5; 
   string creator = 6; 
   uint64 id = 7; 
+  string nickname = 8; 
 }

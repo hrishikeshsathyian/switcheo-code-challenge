@@ -44,15 +44,15 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				},
 				{
 					RpcMethod:      "CreateContact",
-					Use:            "create-contact [first-name] [last-name] [phone] [email] [address]",
+					Use:            "create-contact [first-name] [last-name] [phone] [email] [address] [nickname]",
 					Short:          "Send a create-contact tx",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "firstName"}, {ProtoField: "lastName"}, {ProtoField: "phone"}, {ProtoField: "email"}, {ProtoField: "address"}},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "firstName"}, {ProtoField: "lastName"}, {ProtoField: "phone"}, {ProtoField: "email"}, {ProtoField: "address"}, {ProtoField: "nickname"}},
 				},
 				{
 					RpcMethod:      "UpdateContact",
-					Use:            "update-contact [first-name] [last-name] [phone] [email] [address] [id]",
+					Use:            "update-contact [first-name] [last-name] [phone] [email] [address] [nickname] [id]",
 					Short:          "Send a update-contact tx",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "firstName"}, {ProtoField: "lastName"}, {ProtoField: "phone"}, {ProtoField: "email"}, {ProtoField: "address"}, {ProtoField: "id"}},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "firstName"}, {ProtoField: "lastName"}, {ProtoField: "phone"}, {ProtoField: "email"}, {ProtoField: "address"}, {ProtoField: "nickname"}, {ProtoField: "id"}},
 				},
 				{
 					RpcMethod:      "DeleteContact",

@@ -17,6 +17,7 @@ func (k msgServer) CreateContact(goCtx context.Context, msg *types.MsgCreateCont
 		Phone:     msg.Phone,
 		Email:     msg.Email,
 		Address:   msg.Address,
+		Nickname:  msg.Nickname,
 	}
 	id := k.AppendContact(
 		ctx,

@@ -8,7 +8,7 @@ import (
 
 var _ sdk.Msg = &MsgCreateContact{}
 
-func NewMsgCreateContact(creator string, firstName string, lastName string, phone string, email string, address string) *MsgCreateContact {
+func NewMsgCreateContact(creator string, firstName string, lastName string, phone string, email string, address string, nickname string) *MsgCreateContact {
 	return &MsgCreateContact{
 		Creator:   creator,
 		FirstName: firstName,
@@ -16,6 +16,7 @@ func NewMsgCreateContact(creator string, firstName string, lastName string, phon
 		Phone:     phone,
 		Email:     email,
 		Address:   address,
+		Nickname:  nickname,
 	}
 }
 

@@ -21,6 +21,7 @@ func (k msgServer) UpdateContact(goCtx context.Context, msg *types.MsgUpdateCont
 		Phone:     msg.Phone,
 		Email:     msg.Email,
 		Address:   msg.Address,
+		Nickname:  msg.Nickname,
 	}
 	val, found := k.GetContact(ctx, msg.Id)
 	if !found {
